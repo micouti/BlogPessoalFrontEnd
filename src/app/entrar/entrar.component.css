@@ -1,0 +1,9 @@
+#img-bg {
+  background-image: url(https://64.media.tumblr.com/675b7dfe3a946457696b5475ebb94eb7/1c8181f9f269feb1-b0/s640x960/c4f8884e943feff79c8141f379f602bd3c73b7c0.jpg);
+
+  min-height: 100vh;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

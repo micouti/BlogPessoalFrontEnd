@@ -1,3 +1,8 @@
+import { Usuario } from './../model/Usuario';
+import { Tema } from './../model/Tema';
+import { Postagem } from './../model/Postagem';
+import { Router } from '@angular/router';
+import { environment } from './../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +12,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  postagem: Postagem = new Postagem()
 
-  ngOnInit(): void {
+
+  tema : Tema = new Tema()
+
+
+  usuario: Usuario = new Usuario()
+
+  constructor(
+    private router: Router
+  ) { }
+
+  ngOnInit() {
+
+    if(environment.token == '') {
+      alert('Sua sessão expirou, faça o login novamente.')
+      this.router.navigate(['/entrar'])
+    }
   }
 
 }

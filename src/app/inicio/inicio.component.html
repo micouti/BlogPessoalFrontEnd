@@ -1,1 +1,125 @@
-<p>inicio works!</p>
+<div class="container-fluid">
+  <div class="row corFundo d-flex align-items-center">
+    <div class="col-md-6">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+          <h1 class="text-white">hi, my buddy!</h1>
+          <h5>Esse é o nosso espaço, use para compartilhar suas poesias!</h5>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center mt-3 mb-5">
+        <div class="col-md-6">
+          <button class="btn btn-light mr-2" type="button" data-toggle="modal" data-target="#novaPubli">Publicar</button>
+          <a class="btn btn-outline-light" href="#posts">Ver Posts</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <img src="https://64.media.tumblr.com/597230507a33b60eca823edaddacca18/tumblr_pkzo2wL5xl1wyjjh2o1_540.png"
+        alt="Imagem de fundo" height="500px">
+    </div>
+  </div>
+</div>
+
+<div class="container mb-5 mt-5" id="posts">
+  <nav>
+    <div class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
+      <a class="nav-link active text-secondary font-weight-bold" id="todosPosts-tab" data-toggle="tab" href="#todosPosts" role="tab"
+        aria-controls="todosPosts" aria-selected="true">Todos os Posts</a>
+
+      <a class="nav-link text-secondary font-weight-bold" id="meusPosts-tab" data-toggle="tab" href="#meusPosts" role="tab" aria-controls="meusPosts"
+        aria-selected="false">Meus Posts</a>
+
+      <a class="nav-link text-secondary font-weight-bold" id="postsTema-tab" data-toggle="tab" href="#postTema" role="tab" aria-controls="postTema"
+        aria-selected="false">Posts por Tema</a>
+    </div>
+  </nav>
+
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="todosPosts" role="tabpanel" aria-labelledby="todosPosts-tab">
+      <h3>todas as postagens</h3>
+    </div>
+    <div class="tab-pane fade" id="meusPosts" role="tabpanel" aria-labelledby="meusPosts-tab">
+      <h3>minhas postagens</h3>
+    </div>
+    <div class="tab-pane fade" id="postTema" role="tabpanel" aria-labelledby="postTema-tab">
+      <h3>postagens por tema</h3>
+    </div>
+  </div>
+
+
+  <div class="d-flex py-4">
+    <div class="col-md-4">
+      <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header">Cabeçalho</div>
+        <div class="card-body">
+          <h5 class="card-title">Título de Card Dark</h5>
+          <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo
+            do
+            card.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header">Cabeçalho</div>
+        <div class="card-body">
+          <h5 class="card-title">Título de Card Dark</h5>
+          <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo
+            do
+            card.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header">Cabeçalho</div>
+        <div class="card-body">
+          <h5 class="card-title">Título de Card Dark</h5>
+          <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo
+            do
+            card.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="novaPubli" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="titulo">Título</label>
+          <input type="text" class="form-control" id="titulo" placeholder="Digite o título">
+        </div>
+
+        <div class="form-group">
+          <label for="texto">Texto</label>
+          <textarea class="form-control" name="tetxo" id="texto" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo</a>: </label>
+          <select name="tema" id="tema" class="form-control">
+            <option value="">Temas</option>
+          </select>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success">Publicar</button>
+      </div>
+    </div>
+  </div>
+</div>

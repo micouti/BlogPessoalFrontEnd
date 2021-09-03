@@ -8,11 +8,11 @@
     <ul class="navbar-nav mr-auto mb-2 mb-lg-0 d-flex align-items-center">
       <li class="nav-item">
         <img
-          src="https://scontent-gru2-2.xx.fbcdn.net/v/t1.6435-9/77170321_107640060710758_3469343194364248064_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=174925&_nc_ohc=t729X4q3qcgAX8IS1FJ&tn=HLfVnKAFntKkpiJ-&_nc_ht=scontent-gru2-2.xx&oh=1030c1eab2452de0f6fd2ea75bed9791&oe=61493F72"
+          src="{{foto}}"
           alt="Imagem do user" width="50px" height="50px" class="img-fluid rounded-circle">
       </li>
       <li class="nav-item pl-3">
-        <p class="m-0 font-weight-bold text-white fs-16">Milena Coutinho</p>
+        <p class="m-0 font-weight-bold text-white fs-16">{{nome}}</p>
       </li>
 
       <li class="nav-item pl-3">
@@ -24,7 +24,7 @@
 
     <ul class="navbar-nav ml-auto mb-2 mb-lg-0 d-flex align-items-center">
       <li class="nav-item pl-3">
-        <a class="m-0 font-weight-bold text-white fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+        <a class="m-0 font-weight-bold text-white fs-16" (click)="sair()">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
       </li>
     </ul>
 

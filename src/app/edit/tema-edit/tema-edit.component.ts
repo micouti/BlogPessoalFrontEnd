@@ -1,3 +1,7 @@
+import { environment } from './../../../environments/environment.prod';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TemaService } from './../../service/tema.service';
+import { Tema } from './../../model/Tema';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +11,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemaEditComponent implements OnInit {
 
-  constructor() { }
+  tema: Tema = new Tema()
 
-  ngOnInit(): void {
+  constructor(
+    private temaService: TemaService,
+    private router: Router,
+    private route: ActivatedRoute,
+  ) { }
+
+  ngOnInit() {
+    if(environment.token == ''){
+      this.router.navigate(['/entrar'])
+    }
+    let item = this.route.snapshot.params['id']
+    this.findByIdTema(item)
+  }
+
+  findByIdTema(id: number){
+    this.temaService.getByIdTema(id).subscribe((resp: Tema)=> {
+      this.tema = resp
+    })
+  }
+  atualizar() {
+    this.temaService.putTema(this.tema).subscribe((resp: Tema)=>{
+      this.tema = resp
+      alert("Tema atualizado com sucesso!")
+      this.router.navigate(['/tema'])
+    })
   }
 
 }
